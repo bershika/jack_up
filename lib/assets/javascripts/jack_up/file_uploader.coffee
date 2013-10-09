@@ -2,6 +2,7 @@ class @JackUp.FileUploader
   constructor: (@options) ->
     @path = @options.path
     @responded = false
+    @timeout = @options.timeout
 
   _onProgressHandler: (file) =>
     (progress) =>
