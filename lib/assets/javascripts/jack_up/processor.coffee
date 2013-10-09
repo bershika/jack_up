@@ -29,7 +29,7 @@ class @JackUp.Processor
 
       reader.readAsDataURL(file)
 
-      fileUploader = new JackUp.FileUploader(path: @uploadPath)
+      fileUploader = new JackUp.FileUploader(path: @uploadPath, timeout: @options.timeout)
       @bubble 'upload:start', 'upload:success', 'upload:failure', 'upload:sentToServer', 'upload:percentComplete',
         from: fileUploader
 
