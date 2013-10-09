@@ -35,12 +35,13 @@ class @JackUp.FileUploader
 
   upload: (file) ->
     xhr = new XMLHttpRequest()
-    xhr.timeout = 2000
-    xhr.ontimeout alert("Timed out!!!")
     xhr.upload.addEventListener 'progress', @_onProgressHandler(file), false
     xhr.addEventListener 'readystatechange', @_onReadyStateChangeHandler(file), false
 
     xhr.open 'POST', @path, true
+    
+    xhr.timeout = 2000
+    xhr.ontimeout alert("Timed out!!!")
 
     xhr.setRequestHeader 'Content-Type', file.type
     xhr.setRequestHeader 'X-File-Name', file.name
