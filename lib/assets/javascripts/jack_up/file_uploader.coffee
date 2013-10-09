@@ -35,7 +35,7 @@ class @JackUp.FileUploader
 
   upload: (file) ->
     xhr = new XMLHttpRequest()
-    xhr.timeout = @timeout
+    xhr.timeout = 2000
     xhr.upload.addEventListener 'progress', @_onProgressHandler(file), false
     xhr.addEventListener 'readystatechange', @_onReadyStateChangeHandler(file), false
 
