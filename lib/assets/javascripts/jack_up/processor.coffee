@@ -16,7 +16,7 @@ filesWithData = (event) ->
 class @JackUp.Processor
   constructor: (options) ->
     @uploadPath = options.path
-    @option = options
+    @options = options
 
   processFilesForEvent: (event) =>
     _.each filesWithData(event), (file) =>
